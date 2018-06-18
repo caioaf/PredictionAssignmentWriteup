@@ -1,4 +1,4 @@
-#Prediction Assignment Writeup
+# Prediction Assignment Writeup
 
 ## Backgroupd
 
@@ -24,7 +24,7 @@ val <- data[-inTrain,]
 
 
 
-##Prediction Model
+## Prediction Model
 
 ```R
 # Enabling parallelism
