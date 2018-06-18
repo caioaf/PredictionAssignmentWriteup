@@ -26,6 +26,8 @@ val <- data[-inTrain,]
 
 ## Prediction Model
 
+It was used random forest as my classifier. No hyperparameter tuning was done.
+
 ```R
 # Enabling parallelism
 fitControl <- trainControl(method = "cv",
@@ -46,6 +48,14 @@ model <- train(classe ~ .,
 
 
 ## Result
+
+Result was obtained with:
+
+```
+pred <- predict(model, test)
+confusionMatrix(test$classe,pred)
+```
+Error:
 
 ```
 Confusion Matrix and Statistics
@@ -81,3 +91,6 @@ Detection Prevalence 0.2846939 0.1933673 0.1744898 0.1637755 0.1836735
 Balanced Accuracy    0.9934362 0.9858461 0.9775090 0.9906113 0.9956393
 ```
 
+## Conclusion
+
+The obtained model was good, with accuracy of 98%. The dataset was full of NA values, and several preprocessing methods were applied to improve the training. Also, without parallelism the trainig took too long to converge.
